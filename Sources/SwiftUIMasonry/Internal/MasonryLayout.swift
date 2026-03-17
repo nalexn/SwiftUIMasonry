@@ -29,10 +29,10 @@ where Data : RandomAccessCollection,
         let lineCount = lineCount
         let lineLength = lineLength(for: lineCount)
         
-        var alignments = Array(repeating: CGFloat.zero, count: lineCount)
-        var currentIndex = defaultIndex
-        var currentLineSpan = 1
-        var top: CGFloat = 0
+        nonisolated(unsafe) var alignments = Array(repeating: CGFloat.zero, count: lineCount)
+        nonisolated(unsafe) var currentIndex = defaultIndex
+        nonisolated(unsafe) var currentLineSpan = 1
+        nonisolated(unsafe) var top: CGFloat = 0
         
         ZStack(alignment: .topLeading) {
             Group {
